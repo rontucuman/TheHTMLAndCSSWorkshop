@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothes Store Home Page</title>
+    <style>
+        header,
+        nav,
+        section,
+        footer {
+            background: #524785;
+            color: white;
+            font-size: 30px;
+            font-family: Verdana, Tahoma, sans-serif;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 20px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+        }
+
+        header:before,
+        nav:before,
+        footer:before {
+            content: '<';
+        }
+
+        header:after,
+        nav:after,
+        footer:after {
+            content: '>';
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+        }
+
+        .products div {
+            border-width: 1px;
+            border-color: white;
+            border-style: solid;
+            padding: 30px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>header</header>
+    <nav>nav</nav>
+    <section>Image carousel</section>
+    <section class="products">
+        <div>Product 1</div>
+        <div>Product 2</div>
+        <div>Product 3</div>
+        <div>Product 4</div>
+    </section>
+    <footer>footer</footer>
+</body>
+</html>
