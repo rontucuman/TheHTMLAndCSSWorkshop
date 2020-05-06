@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News paper web page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 1200px;
+            margin: 40px auto;
+            align-content: center;
+        }
+        header div {
+            display: flex;
+            justify-content: center;
+            font-size: 22px;            
+        }
+        header div a {
+            color: black;
+            text-decoration: none;
+        }
+        .header-top {
+            padding-bottom: 3px;
+            border-bottom: 5px solid black;
+        }
+        .header-title {
+            padding: 15px 0;
+            font-size: 110px;
+            font-family: 'Imprint MT Shadow';
+        }
+        .header-right {
+            align-self: center;
+            margin-right: 0px;
+            margin-left: auto;
+        }
+        .header-center {
+            align-content: center;
+            margin: 0;
+            padding:0;
+        }
+        .header-left {
+            margin-left: 0px;
+            margin-right: auto;
+            align-self: center;
+        }
+        .main-header {
+            border-top: 15px double black;
+            border-bottom: 15px double black;
+            font-family: 'Bodoni MT';
+            text-transform: uppercase;
+            text-align: center;            
+        }
+        .main-header-top {            
+            font-size: 4.4em;                                  
+        }
+        .main-header-bottom {
+            font-size: 8.5em;
+            padding: 0px;
+            margin: -20px 0;
+        }
+        .main-datetime {
+            text-transform: uppercase;
+            font-family: 'Tahoma';
+            font-size: 2em;
+            border-bottom: 5px solid black;
+            display: flex;
+            margin-top: 5px;
+        }
+        .main-datetime img {
+            align-self: center;
+        }
+        .main-datetime-left {
+            margin-left: 0;
+            margin-right: auto;
+        }
+        .main-datetime-left span {
+            font-size: 0.5em;
+            vertical-align: top;
+        }
+        .main-datetime-right{
+            margin-right: 0;
+            margin-left: auto;
+        }
+        .main-datetime-center {
+            margin-left: auto;
+            margin-right:auto;
+        }
+        .main-left {
+            width: 60%;
+            border-right: 5px solid black;
+            padding-right: 30px;
+        }
+        .main-right {
+            width: 40%;
+            margin-left: 30px;
+        }
+        .main-content {
+            display: flex;
+            margin-top: 35px;
+            padding-right: 5px;;
+        }
+        .uppercase {
+            text-transform: uppercase;
+        }
+        .main-left-title-upper {
+            display: flex;
+        }
+        .main-left-title-upper h3 {
+            letter-spacing: 5px;
+            margin-bottom: -20px;
+        }
+        .main-left-titles {
+            border-bottom: 5px solid black;
+            padding-left: 20px;
+        }
+        .main-left-title {
+            font-family: 'Bodoni MT';
+            font-size: 4.8em;
+            
+        }
+        .main-left-title2 {
+            font-family: 'Tahoma';
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .finger {
+            align-self: flex-end;
+            margin-bottom: 2px;
+            margin-left: 10px;
+        }
+        .main-left-content p{
+            padding-left: 20px;
+            font-size: 30px;
+            text-align: justify;
+        }
+        .main-left-tickets {
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+        }
+        .main-left-tickets img {
+            margin: 15px;
+            
+        }
+        .main-left-footer p {            
+            text-align: center;
+        }
+        .main-left-footer-top {
+            text-transform: uppercase;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+        .main-left-footer-bottom {
+            text-transform: capitalize;
+            font-family: 'Monotype Corsiva';
+        }
+        .main-right img {
+            margin-bottom: 15px;
+        }
+        .main-right h3 {
+            text-transform: uppercase;
+            font-family: 'Bodoni MT';
+            font-size: 38px;
+            border-bottom: 5px solid black;
+            margin-bottom: 15px;
+        }
+        .main-right p {
+            font-size: 30px;
+            text-align: justify;
+        }
+        footer {
+            border-top: 5px solid black;
+            margin-top: 15px;
+            padding-top: 10px;
+            display: flex;
+        }
+        .footer-article-title {
+            text-transform: uppercase;
+            background-color: black;
+            color: white;
+        }
+        .footer-article-title h2 {
+            margin-left: 10px;
+        }
+        .footer-article-left {
+            margin-right: 35px;
+        }
+        .footer-article-content {
+            display: flex;
+        }
+        .footer-article-content p {
+            font-size: 20px;
+        }
+        .footer-article-content img {
+            margin-top: 5px;
+            margin-right: 10px;
+            align-self: flex-start;            
+        }
+        .footer-article-content span {
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <p class="header-left">Special lifetime of love</p>
+            <img class="header-center" src="https://dummyimage.com/550x65/000000/ffffff" alt="">
+            <p class="header-right"><a href="">www.lorem&ipsum.com</a></p>
+        </div>
+        <div class="header-title">
+            <img class="header-left" src="https://dummyimage.com/150x130/000000/ffffff" alt="">
+            <p class="header-center">The Love Journal</p>
+            <img class="header-right" src="https://dummyimage.com/150x130/000000/ffffff" alt="">
+        </div>
+    </header>
+    <main>
+        <header class="main-header">
+            <p class="main-header-top">lorem and ipsum are getting</p>
+            <p class="main-header-bottom">married today</p>
+        </header>
+        <article class="main-datetime">
+            <p class="main-datetime-left">sunday, november 1<span>st</span>, 2019</p>
+            <img class="main-datetime-center" src="https://dummyimage.com/20x20/000000/ffffff" alt="">
+            <p class="main-datetime-center">culpa officia mollit</p>
+            <img src="https://dummyimage.com/20x20/000000/ffffff" alt="">
+            <p class="main-datetime-right">3:00 PM.</p>
+        </article>
+        <section class="main-content">
+            <section class="main-left">
+                <article class="main-left-titles uppercase">
+                    <div class="main-left-title-upper">
+                        <h3 class="main-left-title">welcome to </h3>
+                        <img class="finger" src="https://dummyimage.com/100x50/000000/ffffff" alt="">
+                    </div>                               
+                    <h3 class="main-left-title">the wedding of</h3>
+                    <p class="main-left-title2">lorem dolore mage & ipsum velit esse</p>
+                </article>
+                <article class="main-left-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel lectus pellentesque, aliquam arcu et, malesuada nisi. Nunc vestibulum fringilla dolor, ut ornare velit malesuada pharetra.</p>
+                    <div class="main-left-tickets">
+                        <img src="https://dummyimage.com/250x300/000000/ffffff" alt="">
+                        <img src="https://dummyimage.com/250x300/000000/ffffff" alt="">
+                    </div>
+                    <div class="main-left-footer">
+                        <p class="main-left-footer-top">culpa officia</p>
+                        <p class="main-left-footer-bottom">officia deserunt mollit</p>
+                    </div>                    
+                </article>
+            </section>
+            <section class="main-right">
+                <img src="https://dummyimage.com/440x500/000000/ffffff" alt="">
+                <h3>love beyond borders!</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel lectus pellentesque, aliquam arcu et, malesuada nisi. Nunc vestibulum fringilla dolor, ut ornare velit.</p>
+            </section>
+        </section>        
+    </main>
+    <footer>
+        <article class="footer-article-left">
+            <div class="footer-article-title">
+                <h2>event & society:</h2>
+            </div>            
+            <div class="footer-article-content">
+                <img src="https://dummyimage.com/90x90/000000/ffffff" alt="">
+                <p>Itation ullamco<br /> oris nisi ut alluip ex ea commodo nsequat duis.</p>
+            </div>            
+        </article>
+        <article class="footer-article-left">
+            <div class="footer-article-title">
+                <h2>rsvp:</h2>
+            </div>
+            <div class="footer-article-content">
+                <img src="https://dummyimage.com/90x90/000000/ffffff" alt="">
+                <p>Respond by <strong>08/01/2019 Lorem</strong><br />123-456-789</p>
+            </div>            
+        </article>
+        <article class="footer-article-left">
+            <div class="footer-article-title">
+                <h2>maid of honour:</h2>
+            </div>
+            <div class="footer-article-content">
+                <img src="https://dummyimage.com/90x90/000000/ffffff" alt="">
+                <p><span>Incid labore</span><br /> Itation ullamco oris nisi ut alluip ex ea commodo.</p>
+            </div>
+            
+        </article>
+        <article>
+            <div class="footer-article-title">
+                <h2>best man:</h2>
+            </div>
+            <div class="footer-article-content">
+                <img src="https://dummyimage.com/90x90/000000/ffffff" alt="">
+                <p><span>Dolore Magna</span><br /> Itation ullamco oris nisi ut alluip ex ea commodo.</p>
+            </div>            
+        </article>
+    </footer>
+</body>
+</html>
