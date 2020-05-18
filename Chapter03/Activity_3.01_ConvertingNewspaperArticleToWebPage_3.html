@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper to web page 3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header-main-title {
+            display: flex;
+            justify-content: center;
+            text-transform: uppercase;
+        }
+        #header-main-title h1 {
+            font-size: 18em;
+            margin: -0.2em 0;
+        }
+        #header-main-title h2 {
+            font-size: 11em;
+            margin: -0.15em 0;
+        }
+        #header-main-title h3 {
+            font-size: 4.5em;
+            align-content: flex-start;
+            margin: -0.1em 0;            
+        }
+        header h4 {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.9em;
+            margin: -0.5em 0;
+        }
+        .weight-normal {
+            font-weight: normal;
+        }
+        .header-datetime {
+            margin-top: 1.3em;
+            background-color: black;
+            color: white;
+            text-transform: uppercase;
+            display: flex;
+            padding: 0.2em 0.5em;
+            font-size: 1.2em;
+        }
+        #datetime-center {
+            margin: 0 auto;
+        }
+        main {
+            margin-top: 1.5em;
+        }
+        #upper {
+            display: flex;
+        }
+        .upper-side {
+            width: 17%;
+        }
+        #upper-left {            
+            padding-right: 1.3em;
+        }
+        #upper-center {
+            width: 59%;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            padding-left: 1.3em;
+            padding-right: 1.3em;
+        }
+        #upper-center h2 {
+            font-size: 3.9em;
+            text-align: center;
+        }
+        .center-subtitle {
+            font-size: 1.5em;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+        .upper-center-img {                        
+            font-size: 0.7em;            
+        }
+        .upper-center-img img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .upper-center-img figcaption {
+            text-align: right;
+            padding-top: 0.3em;
+        }
+        #upper-right {
+            padding-left: 1.3em;
+        }        
+        .condensed {
+            letter-spacing: -0.06em;
+        }
+        .article-title {
+            font-weight: normal;
+            font-size: 3.06em;
+            margin-bottom: 0.3em;
+            line-height: 1em;
+            text-align: justify;
+        }
+        .article-subtitle {
+            border-top: 1px solid black;
+            font-weight: normal;
+            font-size: 0.85em;
+            margin-bottom: 1em;
+        }        
+        main p {
+            text-indent: 1em;
+            text-align: justify;
+        }
+        .wrap-img {
+            float: right;
+            margin-left: 0.5em;;
+        }
+        .wrap-img figcaption {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        .article-ending {
+            border-top: 1px solid black;
+            padding-top: 0.3em;
+            margin-top: 0.5em;
+            font-size: 0.8em;
+        }
+        .article-ending h3 {
+            text-align: right;
+            font-weight: normal;
+        }
+        .main-paragraph {
+            text-indent: 0;
+            font-weight: bold;
+            font-family: 'Tahoma';
+            font-size: 0.85em;
+        }
+        #center-content {
+            display: flex;
+            margin-top: 1.2em;
+        }
+        .center-column {
+            width: 31.4%;
+        }
+        .center-column-middle {
+            margin: 0 1.3em;
+        }
+        .article-author {
+            margin-top: 0.3em;
+            border-top: 1px solid black;
+            margin-bottom: 1em;
+        }
+        .article-author h3 {
+            font-style: normal;
+            font-size: 1em;
+            text-align: left;
+            font-weight: normal;
+        }
+        .article-author h4 {
+            font-size: 0.8em;
+            font-weight: normal
+        }
+        #down {
+            margin-top: 0.7em;
+            border-top: 10px double black;
+            padding-top: 1em;
+            display: flex;
+        }        
+        #down-left {
+            width: 61%;
+            border-right: 1px solid black;
+        }
+        #down-left-col1 {
+            width:30%;
+            padding-right: 1.3em;
+        }
+        #down-left-col2{
+            width: 67%;
+            padding-right: 1.3em;;
+            display: flex;
+            flex-direction: column;
+        }
+        .down-left-content {
+            display: flex;
+        }
+        footer {
+            border-top: 5px double black;
+            display: flex;
+            justify-content: space-between;
+            padding-top: 0.5em;
+            padding-bottom: 1em;
+            margin-top: 0.5em;
+            margin-bottom: 0.2em;
+        }
+        #down-left-col2-columns {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1em;
+        }
+        .down-left-col2-col {
+            width: 48%;
+        }
+        #down-right {
+            width: 37%;
+            padding-left:1.3em;
+        }
+        #down-right-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .down-right-col {
+            width: 48%;
+        }
+        #footer-pages {
+            display: flex;
+            font-style: italic;
+            align-content: center;
+            align-items: center;
+        }
+        #footer-left-text {
+            font-weight: bold;
+            font-family: 'Tahoma';
+        }
+        #footer-left-text span {
+            font-size: 1.5em;;
+        }
+        .footer-pages-img {
+            margin: 0 0.5em;
+        }
+        .format-title4 {
+            letter-spacing: -0.025em;
+        }
+        .format-title3 {
+            letter-spacing: -0.015em;
+        }
+        .format-title1 {
+            letter-spacing: 0.04em;
+        }
+        .format-title2a {
+            letter-spacing: -0.03em;
+        }
+        .format-title2b {
+            letter-spacing: 0.02em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header-main-title">
+            <div><h1 class="weight-normal">o</h1></div>
+            <div>
+                <h3 class="weight-normal">the</h3>
+                <h2 class="weight-normal">bserver</h2>
+            </div>
+        </div>
+        <h4 class="weight-normal">The Independent Newspaper Serving Notre Dame and Saint Mary's</h4>
+        <div class="header-datetime">
+            <p>volume 45: issue 132</p>
+            <p id="datetime-center">monday, april 30, 2012</p>
+            <p>ndsmcobserver.com</p>
+        </div>
+    </header>
+    <main>
+        <section id="upper">
+            <article id="upper-left" class="upper-side" >
+                <h2 class="article-title">O'Brien to speak for <span class="format-title1">graduates</span></h2>
+                <div class="article-subtitle">
+                    <h3>Observer Staff Report</h3>
+                </div>
+                
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis massa tincidunt, tincidunt nunc quis, tristique
+                    <figure class="wrap-img">
+                        <img src="https://dummyimage.com/120x140/000/fff" alt="">
+                        <figcaption>O'Brien</figcaption>
+                    </figure>
+                     nunc.</p><p> Sed sapien turpis, laoreet nec mattis facilisis, rhoncus sed felis. Nulla facilisi. Vestibulum nec justo vitae nisl aliquam consequat.</p>
+                <p>Donec id interdum lectus. Donec et nisl neque. Integer congue lobortis erat ut eleifend. Quisque posuere magna purus, faucibus elementum leo egestas vel. Curabitur nec enim elit. In euismod sem urna, vel pulvinar arcu porttitor at. Phasellus sodales et sem vel consequat. Duis mollis eget nisl sit amet cursus. In sollicitudin metus in cursus aliquam.</p>
+                <p>Phasellus sodales nulla at odio porttitor, in lacinia lectus bibendum. Integer tempus massa nisl, in rhoncus quam elementum sit amet. Maecenas laoreet in erat quis volutpat. Mauris sodales congue urna sit amet porttitor.</p>
+                <div class="article-ending">
+                    <h3>see SPEAKER/page 4</h3>
+                </div>
+            </article>
+            <article id="upper-center">
+                <h2>"Everything but equality"</h2>
+                <h3 class="center-subtitle">Gay professors speak out to support student work towards inclusion</h3>
+                <figure class="upper-center-img">
+                    <img src="https://dummyimage.com/708x400/000/fff" alt="">
+                    <figcaption>PAT COVENEY/The Observer</figcaption>
+                </figure>
+                <p class="main-paragraph">Spanish professor Carlos Jerez-Farran speaks out about the "invisible discrimination" he's experienced and the University's lack of promotion of his research on LGBTQ issues, seen in the books pictured.</p>
+                <div id="center-content">
+                    <div class=center-column>
+                        <div class="article-author">
+                            <h3>By SARAH MERVOSH</h3>
+                            <h4>Senior News Writer</h4>
+                        </div>
+                        <p>Donec finibus luctus rhoncus. Vestibulum at euismod massa. Vivamus eu metus id lorem bibendum imperdiet. Pellentesque scelerisque mi neque, id viverra urna gravida eget. Etiam in nibh vitae felis rutrum fringilla a nec felis. In lorem lorem, ultrices vitae dui et, congue finibus sapien. Nulla auctor tincidunt odio.</p>
+                    </div>
+                    <div class="center-column center-column-middle">
+                        <p>Donec finibus luctus rhoncus. Vestibulum at euismod massa. Vivamus eu metus id lorem bibendum imperdiet. Pellentesque scelerisque mi neque, id viverra urna gravida eget. Etiam in nibh vitae felis rutrum fringilla a nec felis. In lorem lorem, ultrices vitae dui et, congue finibus sapien. Nulla auctor tincidunt odio, vel pharetra mauris ultricies ut. Praesent suscipit libero et rhoncus ultricies. Proin purus est.</p>
+                    </div>
+                    <div class="center-column">
+                        <p>Donec finibus luctus rhoncus. Vestibulum at euismod massa. Vivamus eu metus id lorem bibendum imperdiet. Pellentesque scelerisque mi neque, id viverra urna gravida eget. Etiam in nibh vitae felis rutrum fringilla a nec felis. In lorem lorem, ultrices vitae dui et, congue finibus sapien. Nulla auctor tincidunt odio, vel pharetra mauris ultricies ut.</p>
+                        <div class="article-ending">
+                            <h3>see RIGHTS/page 4</h3>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article id="upper-right" class="upper-side">
+                <h2 class="article-title condensed"><span class="format-title2a">Ex-worker</span> <span class="format-title2b">sentenced</span> to probation</h2>
+                <div class="article-subtitle">
+                    <h3>Observer Staff Report</h3>
+                </div>
+                
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis massa tincidunt, tincidunt nunc quis, tristique nunc. Sed sapien turpis, laoreet nec mattis facilisis, rhoncus sed felis. Nulla facilisi. Vestibulum nec justo vitae nisl aliquam consequat.</p>
+                <p>Donec id interdum lectus. Donec et nisl neque. Integer congue lobortis erat ut eleifend. Quisque posuere magna purus, faucibus elementum leo egestas vel. Curabitur nec enim elit. In euismod sem urna, vel pulvinar arcu porttitor at. Phasellus sodales et sem vel consequat. Duis mollis eget nisl sit amet cursus. In sollicitudin metus in cursus aliquam.</p>
+                <p>Phasellus sodales nulla at odio porttitor, in lacinia lectus bibendum. Integer tempus massa nisl, in rhoncus quam elementum sit amet. Maecenas laoreet in erat quis volutpat. Mauris sodales congue urna sit amet porttitor.</p>
+                <p>Pellentesque tincidunt, ex sed aliquet porta, leo libero imperdiet arcu, eget blandit nisi magna at sem. Nullam efficitur arcu eget dui congue ultricies. Morbi ut cursus sapien.</p>
+                <div class="article-ending">
+                    <h3>see STEINKE/page 4</h3>
+                </div>
+            </article>
+        </section>
+        <section id="down">
+            <article id="down-left">
+                <h2 class="article-title condensed"><span class="format-title3">St. Edward's to keep lofts temporarily</span></h2>
+                <div class="down-left-content">
+                    <div id="down-left-col1">
+                        <div class="article-author">
+                            <h3>By TORI ROECK</h3>
+                            <h4>News Writer</h4>
+                        </div>    
+                        <p>Phasellus sodales nulla at odio porttitor, in lacinia lectus bibendum. Integer tempus massa nisl, in rhoncus quam elementum sit amet. Maecenas laoreet in erat quis volutpat. Mauris sodales congue urna sit amet porttitor. Quisque luctus suscipit sodales. Cras sagittis augue in velit mollis bibendum. Suspendisse id sem nec quam eleifend hendrerit eget et mauris. Duis placerat scelerisque justo eget pharetra. Mauris malesuada, justo vel suscipit congue, lorem nunc molestie urna, ut lacinia mi metus in purus. Aenean sed fringilla tellus, rhoncus sagittis ligula. Aenean sed fringilla tellus, rhoncus sagittis ligula placerat scelerisque.</p>
+                    </div>
+                    <div id="down-left-col2">
+                        <figure class="upper-center-img">
+                            <img src="https://dummyimage.com/490x330/000/fff" alt="">
+                            <figcaption>Photo courtesy of Frank Soler</figcaption>
+                        </figure>
+                        <p class="main-paragraph">Pictured is a loft in St. Edward's Hall. Residents petitioned to keep the lofts after hearing of plans to phase them out.</p>
+                        <div id="down-left-col2-columns">
+                            <div class="down-left-col2-col">
+                                <p>Phasellus sodales nulla at odio porttitor, in lacinia lectus bibendum. Integer tempus massa nisl, in rhoncus quam elementum sit amet. Cras sagittis augue in velit mollis bibendum.</p>
+                            </div>
+                            <div class="down-left-col2-col">
+                                <p>Phasellus sodales nulla at odio porttitor, in lacinia lectus bibendum. Integer tempus massa nisl, in rhoncus quam elementum sit amet.</p>
+                                <div class="article-ending">
+                                    <h3>see LOFTS/page 4</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>                
+            </article>
+            <article id="down-right">
+                <h2 class="article-title condensed">Theater professor named <span class="format-title4">Sheedy Award recipient</span></h2>
+                <div id="down-right-content">
+                    <div class="down-right-col">
+                        <div class="article-author">
+                            <h3>By KRISTEN DURBIN</h3>
+                            <h4>News Editor</h4>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis urna dui, tempus tempor sapien varius sed.</p> 
+                        <figure class="wrap-img">
+                            <img src="https://dummyimage.com/120x150/000/fff" alt="">
+                            <figcaption>Holland</figcaption>
+                        </figure>    
+                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent porttitor, ligula eu efficitur convallis, justo mi malesuada orci, ut scelerisque diam libero sit amet justo. Donec pharetra, mi ac lacinia rhoncus, purus nisi imperdiet libero, in lobortis mauris neque eget diam. In viverra orci purus, a commodo.</p>
+                    </div>
+                    <div class="down-right-col">
+                        <p>Proin finibus nulla lobortis sem porttitor, nec tristique urna suscipit. Integer lacinia neque et sem rhoncus, eget feugiat ex eleifend. Pellentesque sed nibh eget ligula ultricies ullamcorper. Nullam nibh justo, blandit quis nibh sit amet, maximus aliquam nisi. Mauris commodo nisi nibh, id aliquam lectus bibendum ut. Nam pretium porta nibh nec convallis. Vivamus accumsan ornare condimentum. Curabitur aliquet accumsan nibh, vel pretium quam maximus vitae. Nam et mauris nec magna lacinia lobortis at eget purus. Vivamus eu tellus vel lacus sodales placerat vitae ut velit. Duis molestie accumsan elit tempus ultricies. Mauris eu sem in tortor molestie efficitur et quis elit.</p>
+                        <div class="article-ending">
+                            <h3>see HOLLAND/page 6</h3>
+                        </div>
+                    </div>
+                </div>
+            </article>            
+        </section>
+    </main>
+    <footer>
+        <p id="footer-left-text"><span>I</span>NSIDE TODAY'S PAPER</p>
+        <div id="footer-pages">
+            <p>Campus gets 'Muddy' page 3 </p>
+            <img src="
+            https://dummyimage.com/15x15/000/fff" class="footer-pages-img" alt="">
+            <p> Viewpoint page 8 </p>
+            <img src="
+            https://dummyimage.com/15x15/000/fff" class="footer-pages-img" alt="">
+            <p> Vanessa Carlton performs at Legends page 10 </p>
+            <img src="
+            https://dummyimage.com/15x15/000/fff" class="footer-pages-img" alt="">
+            <p> Men's lacrosse beats Syracuse page 20</p>
+        </div>
+    </footer>
+</body>
+</html>
