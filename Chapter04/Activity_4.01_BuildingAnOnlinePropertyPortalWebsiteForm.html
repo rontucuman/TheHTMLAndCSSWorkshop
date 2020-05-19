@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: arial, sans-serif;
+            padding: 10px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        fieldset {
+            border: 0;
+            width: 880px;
+        }
+        .double-input {
+            display: flex;
+            margin-bottom: 30px;
+        }
+        .select-group {
+            display: flex;
+            align-items: center;
+            margin-right: 40px;
+        }
+        label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .select-group>label {
+            width: 150px;
+        }
+        .select-wrapper {
+            position: relative;
+        }
+        .select-wrapper:after {
+            position: absolute;
+            content: '< >';
+            z-index: -1;
+            transform: rotate(90deg);
+            color: gray;
+            top: 10px;
+            right: 0;
+        }
+        select {
+            width: 250px;
+            padding: 10px 0;
+            -webkit-appearance: none;
+            border-color: gray;
+            border-radius: 0;
+            padding-left: 10px;
+            background: transparent;
+            box-shadow: none;
+            color: gray;
+        }
+        .checkbox {
+            padding-left: 150px;
+        }
+        .checkbox label {
+            margin-left: 10px;
+        }
+        fieldset button {
+            border: 0;
+            background: green;
+            color: white;
+            text-transform: uppercase;
+            padding: 15px 90px;
+            float: right;
+            margin-right: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Property for sale in London</h1>
+    <form action="url-to-send" method="POST">
+        <fieldset>
+            <div class="double-input">
+                <div class="select-group">
+                    <label for="search_radius">Search radius:</label>
+                    <div class="select-wrapper">
+                        <select name="search_radius" id="search_radius">
+                            <option value="ThisAreaOnly">This area only</option>
+                            <option value="TheWholeState">The whole State</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="select-group">
+                    <label for="property_type">Property type:</label>
+                    <div class="select-wrapper">
+                        <select name="property_type" id="property_type">
+                            <option value="Any">Any</option>
+                            <option value="Castle">Castle</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="double-input">
+                <div class="select-group">
+                    <label for="price_range">Price range:</label>
+                    <div class="select-wrapper">
+                        <select name="price_range" id="price_range">
+                            <option value="Any">Any</option>
+                            <option value="GreaterThan1000000">Greater then 1000000</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="select-group">
+                    <label for="added_site">Added to site:</label>
+                    <div class="select-wrapper">
+                        <select name="added_site" id="added_site">
+                            <option value="Anytime">Anytime</option>
+                            <option value="In2020">In 2020</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="double-input">
+                <div class="select-group">
+                    <label for="bedrooms">Bedrooms:</label>
+                    <div class="select-wrapper">
+                        <select name="bedrooms" id="bedrooms">
+                            <option value="Any">Any</option>
+                            <option value="GreaterThanFourRooms">Greate then 4 rooms</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" name="sold_properties" id="sold_properties">
+                    <label for="sold_properties">Include sold properties</label>
+                </div>
+            </div>
+            <button type="submit">Find Properties</button>
+        </fieldset>
+    </form>
+</body>
+</html>
